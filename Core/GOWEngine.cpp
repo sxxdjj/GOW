@@ -226,6 +226,27 @@ void GOWEngine::CheckError(std::string InMessage, std::string InFile, uint32 Inl
 
 void GOWEngine::GetDeviceInfo()
 {
-	GOWEngine::DeviceInfo.PlatformName = std::string(SDL_GetPlatform());
-	GOWEngine::DeviceInfo.LogicalCoresNum = SDL_GetCPUCount();
+	DeviceInfo.PlatformName = std::string(SDL_GetPlatform());
+	DeviceInfo.LogicalCoresNum = SDL_GetCPUCount();
+	DeviceInfo.SystemRam = SDL_GetSystemRAM();
+	DeviceInfo.DisplaysNum = SDL_GetNumVideoDisplays();
+	DeviceInfo.DesktopDisplayModes.resize(DeviceInfo.DisplaysNum);
+	DeviceInfo.SupportedDisplayModes.resize(DeviceInfo.DisplaysNum);
+
+	for (int32 i = 0; i < DeviceInfo.DisplaysNum; i++)
+	{
+		int32 NumModes = SDL_GetNumDisplayModes(i);
+
+		DeviceInfo.SupportedDisplayModes[i].resize(NumModes);
+		SDL_GetDesktopDisplayMode(i, &DeviceInfo.DesktopDisplayModes[1]);
+
+		for (int32 j = 0; j < NumModes; j++)
+		{
+			SDL_GetDisplayMode(i, j, &DeviceInfo.SupportedDisplayModes[i][j]);
+		}
+	}
+
+	DeviceInfo.DisplayBounds.resize(DeviceInfo.DisplaysNum);
+	for (int32 i = 0; i < DeviceInfo.DisplaysNum; i++)
+		SDL_GetDisplayBounds(i, &DeviceInfo.DisplayBounds[i]);
 }

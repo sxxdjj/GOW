@@ -77,7 +77,7 @@ namespace GOW
 		std::vector<SDL_DisplayMode> DesktopDisplayModes;
 
 		// 兼容的显示类型列表
-		std::vector<SDL_DisplayMode> SupportedDisplayModes;
+		std::vector<std::vector<SDL_DisplayMode>> SupportedDisplayModes;
 
 		// 显示范围
 		std::vector<SDL_Rect> DisplayBounds;

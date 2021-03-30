@@ -283,7 +283,7 @@ namespace GOW
 			return true;
 		}
 
-	public:
+	protected:
 		// »º³å¶ÔÏóÃû×Ö
 		GLuint Buffer;
 

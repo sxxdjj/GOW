@@ -26,6 +26,7 @@
   <ItemGroup>
     <ClCompile Include="Core\GOWCamera.cpp" />
     <ClCompile Include="Core\GOWEngine.cpp" />
+    <ClCompile Include="Core\GOWPerspectiveGamera.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

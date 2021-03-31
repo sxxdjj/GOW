@@ -15,6 +15,12 @@
     <ClInclude Include="Core\GOWCamera.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\GOWFrameBuffer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\GOWImage.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\GOWEngine.cpp">
@@ -24,6 +30,15 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\GOWPerspectiveGamera.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GOWOrthographicCamera.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GOWIPCamera.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GOWImage.cpp">
       <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>

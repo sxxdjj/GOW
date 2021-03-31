@@ -22,10 +22,15 @@
     <ClInclude Include="Core\GOWBuffer.h" />
     <ClInclude Include="Core\GOWCamera.h" />
     <ClInclude Include="Core\GOWEngine.h" />
+    <ClInclude Include="Core\GOWFrameBuffer.h" />
+    <ClInclude Include="Core\GOWImage.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\GOWCamera.cpp" />
     <ClCompile Include="Core\GOWEngine.cpp" />
+    <ClCompile Include="Core\GOWImage.cpp" />
+    <ClCompile Include="Core\GOWIPCamera.cpp" />
+    <ClCompile Include="Core\GOWOrthographicCamera.cpp" />
     <ClCompile Include="Core\GOWPerspectiveGamera.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

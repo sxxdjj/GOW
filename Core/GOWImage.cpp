@@ -44,7 +44,7 @@ GOWImage::GOWImage(uint32 InWidth, uint32 InHeight, uint32 InBytesPerPixel)
 	{
 		std::string Error = std::string("Error loading image: ") + SDL_GetError();
 
-		GOWEngine.ErrorString.push_back(Error);
+		GOWEngine::ErrorString.push_back(Error);
 		throw std::runtime_error(Error);
 	}
 }
@@ -272,9 +272,9 @@ bool GOWImage::CopyFrom(const GOWImage& InSrc, SDL_Rect& InDstRect, const SDL_Re
 			GOWEngine::ErrorString.push_back(std::string("SDL_BlitSurface failed: ") + SDL_GetError());
 			return false;
 		}
-
-		return true;
 	}
+
+	return true;
 }
 
 void GOWImage::VerticalFlip()

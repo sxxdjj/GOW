@@ -47,5 +47,8 @@
     <ClCompile Include="Core\GOWTexture.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Core\GOWTexture1D.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

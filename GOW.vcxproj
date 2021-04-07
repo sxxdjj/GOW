@@ -34,6 +34,7 @@
     <ClCompile Include="Core\GOWOrthographicCamera.cpp" />
     <ClCompile Include="Core\GOWPerspectiveGamera.cpp" />
     <ClCompile Include="Core\GOWTexture.cpp" />
+    <ClCompile Include="Core\GOWTexture1D.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

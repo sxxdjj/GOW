@@ -21,6 +21,9 @@
     <ClInclude Include="Core\GOWImage.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\GOWTexture.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\GOWEngine.cpp">
@@ -39,6 +42,9 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\GOWImage.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GOWTexture.cpp">
       <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>

@@ -24,6 +24,7 @@
     <ClInclude Include="Core\GOWEngine.h" />
     <ClInclude Include="Core\GOWFrameBuffer.h" />
     <ClInclude Include="Core\GOWImage.h" />
+    <ClInclude Include="Core\GOWTexture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\GOWCamera.cpp" />
@@ -32,6 +33,7 @@
     <ClCompile Include="Core\GOWIPCamera.cpp" />
     <ClCompile Include="Core\GOWOrthographicCamera.cpp" />
     <ClCompile Include="Core\GOWPerspectiveGamera.cpp" />
+    <ClCompile Include="Core\GOWTexture.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -125,6 +125,59 @@ namespace GOW
 		// 解绑纹理
 		EXPORT void UnBind(uint32 InTextureUnit = 0);
 	};
+
+	// GOWTexture1DArray
+	// 管理1维纹理数组
+	class GOWTexture1DArray : public GOWTexture
+	{
+	public:
+		EXPORT GOWTexture1DArray();
+
+		// InPaths 图片路径
+		EXPORT GOWTexture1DArray(const std::vector<std::string>& InPaths);
+
+		// InImages 纹理层级的图片
+		EXPORT GOWTexture1DArray(const std::vector<GOW::GOWImage>& InImages);
+
+		// InRes 纹理分辨率
+		// InNumLayers 层级数量
+		// InInternalFormat 纹理内部格式
+		// InType 像素类型
+		// InFormat 纹理格式
+		EXPORT GOWTexture1DArray(uint32 InRes,
+								uint32 InNumLayers,
+								GLenum InInternalFormat, 
+								GLenum InType, 
+								GLenum InFormat);
+
+		EXPORT ~GOWTexture1DArray();
+
+		// 创建一个空的纹理
+		// InNumLayers 层级数量
+		// InInternalFormat 纹理内部格式
+		// InType 像素类型
+		// InFormat 纹理格式
+		EXPORT void CreateEmpty(uint32 InRes, 
+								uint32 InNumLayers, 
+								GLenum InInternalFormat,
+								GLenum InType, 
+								GLenum InFormat);
+
+		// 纹理加载一张新图片
+		// InImage 用于纹理的图片
+		EXPORT bool Load(const std::vector<GOW::GOWImage>& InImages);
+
+		// 纹理加载一张新图片
+		// InPath 图片路径
+		EXPORT bool Load(const std::vector<std::string>& InPaths);
+
+		// 绑定纹理到指定的着色器
+		// InTextureUnit 纹理单元
+		EXPORT void Bind(uint32 InTextureUnit  = 0);
+
+		// 解绑纹理
+		EXPORT void UnBind(uint32 InTextureUnit = 0);
+	};
 };
 
 #endif

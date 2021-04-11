@@ -123,6 +123,6 @@ void GOWTexture2D::Bind(uint32 InTextureUnit /* = 0 */)
 
 void GOWTexture2D::UnBind(uint32 InTextureUnit /* = 0 */)
 {
-	glActiveTexture(GL_TEXTURE0 + InTextureUnit);
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, 0);
 }

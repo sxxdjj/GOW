@@ -53,5 +53,11 @@
     <ClCompile Include="Core\GOWTexture1DArray.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Core\GOWTexture2D.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GOWTexture2DArray.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

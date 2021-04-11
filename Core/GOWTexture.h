@@ -178,6 +178,61 @@ namespace GOW
 		// 解绑纹理
 		EXPORT void UnBind(uint32 InTextureUnit = 0);
 	};
+
+	// class GOWTexture2D
+	// 管理2维纹理
+	class GOWTexture2D : public GOWTexture
+	{
+	public:
+		EXPORT GOWTexture2D();
+
+		// InPath 图片文件路径
+		EXPORT GOWTexture2D(const std::string& InPath);
+
+		// InImage 用于纹理的图片
+		EXPORT GOWTexture2D(const GOW::GOWImage& InImage);
+
+		// InResX 纹理x方向分辨率
+		// InResY 纹理Y方向分辨率
+		// InInternalFormat 纹理内部格式
+		// InType 像素类型
+		// InFormat 纹理格式
+		EXPORT GOWTexture2D(uint32 InResX, 
+							uint32 InResY, 
+							GLenum InIternalFormat, 
+							GLenum InType, 
+							GLenum InFormat);
+
+		EXPORT ~GOWTexture2D();
+
+		// 创建一个空的纹理
+		// InResX 纹理x方向分辨率
+		// InResY 纹理Y方向分辨率
+		// InInternalFormat 纹理内部格式
+		// InType 像素类型
+		// InFormat 纹理格式
+		EXPORT void CreateEmpty(uint32 InResX,
+								uint32 InResY,
+								GLenum InInteranlFormat,
+								GLenum InType,
+								GLenum InFormat);
+
+		// 纹理加载一个新的图片
+		// InImage 用于纹理的图片
+		EXPORT bool Load(const GOW::GOWImage& InImage);
+
+		// 纹理加载一个新的图片
+		// InPath 图片文件路径
+		EXPORT bool Load(const std::string& InPath);
+
+		// 绑定纹理，用于着色器
+		// InTexureUnit 纹理单元
+		EXPORT void Bind(uint32 InTextureUnit = 0);
+
+		// 解绑纹理
+		// InTexureUnit 纹理单元
+		EXPORT void UnBind(uint32 InTextureUnit = 0);
+	};
 };
 
 #endif

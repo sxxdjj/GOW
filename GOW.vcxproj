@@ -38,6 +38,7 @@
     <ClCompile Include="Core\GOWTexture1DArray.cpp" />
     <ClCompile Include="Core\GOWTexture2D.cpp" />
     <ClCompile Include="Core\GOWTexture2DArray.cpp" />
+    <ClCompile Include="Core\GOWTexture3D.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

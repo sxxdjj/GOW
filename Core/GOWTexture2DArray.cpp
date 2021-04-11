@@ -133,13 +133,13 @@ bool GOWTexture2DArray::Load(const std::vector<GOW::GOWImage>& InImages)
 				GL_RGBA,
 				Width, 
 				Height,
-				InImages.size(),
+				NumLayers,
 				0, 
 				GL_RGBA, 
 				GL_UNSIGNED_INT_8_8_8_8, 
 				nullptr);
 
-	for (uint32 i = 0; i < InImages.size(); i++)
+	for (uint32 i = 0; i < NumLayers; i++)
 	{
 		glTexSubImage3D(GL_TEXTURE_2D_ARRAY,
 						0, 

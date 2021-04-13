@@ -62,5 +62,8 @@
     <ClCompile Include="Core\GOWTexture3D.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Core\GOWCubMap.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

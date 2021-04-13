@@ -351,6 +351,88 @@ namespace GOW
 		// InTexureUnit 纹理单元
 		EXPORT void UnBind(uint32 InTextureUnit = 0);
 	};
+
+	// class GOWCubMap
+	// 管理正方形纹理
+	class GOWCubMap : public GOWTexture
+	{
+		EXPORT GOWCubMap();
+
+		// InResX 纹理x方向分辨率
+		// InResY 纹理Y方向分辨率
+		// InInternalFormat 纹理内部格式
+		// InType 像素类型
+		// InFormat 纹理格式
+		EXPORT GOWCubMap(uint32 InResX, 
+						uint32 InResY, 
+						GLenum InInternalFormat, 
+						GLenum InType, 
+						GLenum InFormat);
+
+		// 加载一个新的正方形纹理
+		// InPosX 用于x正方向纹理的图片
+		// InNegX 用于x负方向纹理的图片
+		// InPosY 用于y正方向纹理的图片
+		// InNegY 用于y负方向纹理的图片
+		// InPosZ 用于z正方向纹理的图片
+		// InNegZ 用于z负方向纹理的图片
+		EXPORT GOWCubMap(const GOW::GOWImage& InPosX, 
+						const GOW::GOWImage& InNegX, 
+						const GOW::GOWImage& InPosY, 
+						const GOW::GOWImage& InNegY,
+						const GOW::GOWImage& InPosZ,
+						const GOW::GOWImage& InNegZ);
+
+		EXPORT ~GOWCubMap();
+
+		// 创建一个空的纹理
+		// InResX 纹理X方向分辨率
+		// InResY 纹理Y方向分辨率
+		// InInternalFormat 纹理内部格式
+		// InType 像素类型
+		// InFormat 纹理格式
+		EXPORT void CreateEmpty(uint32 InResX, 
+			uint32 InResY, 
+			GLenum InInternalFormat, 
+			GLenum InType, 
+			GLenum InFormat);
+
+		// 加载一个新的正方形纹理
+		// InPosX 用于x正方向纹理的图片
+		// InNegX 用于x负方向纹理的图片
+		// InPosY 用于y正方向纹理的图片
+		// InNegY 用于y负方向纹理的图片
+		// InPosZ 用于z正方向纹理的图片
+		// InNegZ 用于z负方向纹理的图片
+		EXPORT bool Load(const std::string& InPosX, 
+						const std::string& InNegX, 
+						const std::string& InPosY, 
+						const std::string& InNegY, 
+						const std::string& InPosZ, 
+						const std::string& InNegZ);
+
+		// 加载一个新的正方形纹理
+		// InPosX 用于x正方向纹理的图片
+		// InNegX 用于x负方向纹理的图片
+		// InPosY 用于y正方向纹理的图片
+		// InNegY 用于y负方向纹理的图片
+		// InPosZ 用于z正方向纹理的图片
+		// InNegZ 用于z负方向纹理的图片
+		EXPORT bool Load(const GOWImage& InPosX, 
+						const GOWImage& InNegX, 
+						const GOWImage& InPosY,
+						const GOWImage& InNegY,
+						const GOWImage& InPosZ,
+						const GOWImage& InNegZ);
+
+		// 绑定纹理，用于着色器
+		// InTexureUnit 纹理单元
+		EXPORT void Bind(uint32 InTextureUnit = 0);
+
+		// 解绑纹理
+		// InTexureUnit 纹理单元
+		EXPORT void UnBind(uint32 InTextureUnit = 0);
+	};
 };
 
 #endif

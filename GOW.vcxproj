@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\GOWCamera.cpp" />
+    <ClCompile Include="Core\GOWCubMap.cpp" />
     <ClCompile Include="Core\GOWEngine.cpp" />
     <ClCompile Include="Core\GOWImage.cpp" />
     <ClCompile Include="Core\GOWIPCamera.cpp" />

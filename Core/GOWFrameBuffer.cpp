@@ -189,16 +189,16 @@ void GOWFrameBuffer::Finalize()
 }
 
 void GOWFrameBuffer::BlitTo(GOW::GOWFrameBuffer* InTarget,
-	uint32 InSrcX0,
-	uint32 InSrcY0,
-	uint32 InSrcX1,
-	uint32 InSrcY1,
-	uint32 InDstX0,
-	uint32 InDstY0,
-	uint32 InDstX1,
-	uint32 InDstY1,
-	GLbitfield InMask,
-	GLenum InFilter)
+							uint32 InSrcX0,
+							uint32 InSrcY0,
+							uint32 InSrcX1,
+							uint32 InSrcY1,
+							uint32 InDstX0,
+							uint32 InDstY0,
+							uint32 InDstX1,
+							uint32 InDstY1,
+							GLbitfield InMask,
+							GLenum InFilter)
 {
 	if (InTarget)
 		InTarget->Bind(GL_DRAW_BUFFER);
@@ -207,15 +207,15 @@ void GOWFrameBuffer::BlitTo(GOW::GOWFrameBuffer* InTarget,
 
 	Bind(GL_READ_FRAMEBUFFER);
 	glBlitFramebuffer(InSrcX0,
-		InSrcY0,
-		InSrcX1,
-		InSrcY1,
-		InDstX0,
-		InDstY0,
-		InDstX1,
-		InDstY1,
-		InMask,
-		InFilter);
+					InSrcY0,
+					InSrcX1,
+					InSrcY1,
+					InDstX0,
+					InDstY0,
+					InDstX1,
+					InDstY1,
+					InMask,
+					InFilter);
 	UnBind();
 
 	if (InTarget)
@@ -223,18 +223,27 @@ void GOWFrameBuffer::BlitTo(GOW::GOWFrameBuffer* InTarget,
 }
 
 void GOWFrameBuffer::BlitFromDefault(uint32 InSrcX0,
-	uint32 InSrcY0,
-	uint32 InSrcX1,
-	uint32 InSrcY1,
-	uint32 InDstX0,
-	uint32 InDstY0,
-	uint32 InDstX1,
-	uint32 InDstY1,
-	GLbitfield InMask,
-	GLenum InFilter)
+									uint32 InSrcY0,
+									uint32 InSrcX1,
+									uint32 InSrcY1,
+									uint32 InDstX0,
+									uint32 InDstY0,
+									uint32 InDstX1,
+									uint32 InDstY1,
+									GLbitfield InMask,
+									GLenum InFilter)
 {
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
 	Bind(GL_DRAW_FRAMEBUFFER);
-	glBlitFramebuffer(InSrcX0, InSrcY0, InSrcX1, InSrcY1, InDstX0, InDstY0, InDstX1, InDstY1, InMask, InFilter);
+	glBlitFramebuffer(InSrcX0, 
+					InSrcY0, 
+					InSrcX1, 
+					InSrcY1,
+					InDstX0, 
+					InDstY0, 
+					InDstX1, 
+					InDstY1, 
+					InMask, 
+					InFilter);
 	UnBind();
 }

@@ -71,5 +71,8 @@
     <ClCompile Include="Core\GOWRenderBuffer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Core\GOWFrameBuffer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

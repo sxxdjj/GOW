@@ -74,17 +74,17 @@ bool GOWFrameBuffer::AttachTexture(GLenum InAttachment, GOWTexture& InTexture)
 
 	switch (InAttachment)
 	{
-		case GL_NONE:
-		case GL_FRONT_LEFT:
-		case GL_FRONT_RIGHT:
-		case GL_BACK_LEFT:
-		case GL_BACK_RIGHT:
+	case GL_NONE:
+	case GL_FRONT_LEFT:
+	case GL_FRONT_RIGHT:
+	case GL_BACK_LEFT:
+	case GL_BACK_RIGHT:
+		DrawBuffers.push_back(InAttachment);
+		break;
+	default:
+		if (InAttachment >= GL_COLOR_ATTACHMENT0 && InAttachment < AttachmentMax)
 			DrawBuffers.push_back(InAttachment);
-			break;
-		default:
-			if (InAttachment >= GL_COLOR_ATTACHMENT0 && InAttachment < AttachmentMax)
-				DrawBuffers.push_back(InAttachment);
-			break;
+		break;
 	}
 
 	return true;
@@ -189,16 +189,16 @@ void GOWFrameBuffer::Finalize()
 }
 
 void GOWFrameBuffer::BlitTo(GOW::GOWFrameBuffer* InTarget,
-							uint32 InSrcX0,
-							uint32 InSrcY0,
-							uint32 InSrcX1,
-							uint32 InSrcY1,
-							uint32 InDstX0,
-							uint32 InDstY0,
-							uint32 InDstX1,
-							uint32 InDstY1,
-							GLbitfield InMask,
-							GLenum InFilter)
+	uint32 InSrcX0,
+	uint32 InSrcY0,
+	uint32 InSrcX1,
+	uint32 InSrcY1,
+	uint32 InDstX0,
+	uint32 InDstY0,
+	uint32 InDstX1,
+	uint32 InDstY1,
+	GLbitfield InMask,
+	GLenum InFilter)
 {
 	if (InTarget)
 		InTarget->Bind(GL_DRAW_BUFFER);
@@ -206,16 +206,16 @@ void GOWFrameBuffer::BlitTo(GOW::GOWFrameBuffer* InTarget,
 		glBindFramebuffer(GL_DRAW_BUFFER, 0);
 
 	Bind(GL_READ_FRAMEBUFFER);
-	glBlitFramebuffer(InSrcX0, 
-					InSrcY0, 
-					InSrcX1,
-					InSrcY1, 
-					InDstX0, 
-					InDstY0, 
-					InDstX1, 
-					InDstY1,
-					InMask, 
-					InFilter);
+	glBlitFramebuffer(InSrcX0,
+		InSrcY0,
+		InSrcX1,
+		InSrcY1,
+		InDstX0,
+		InDstY0,
+		InDstX1,
+		InDstY1,
+		InMask,
+		InFilter);
 	UnBind();
 
 	if (InTarget)
@@ -223,15 +223,15 @@ void GOWFrameBuffer::BlitTo(GOW::GOWFrameBuffer* InTarget,
 }
 
 void GOWFrameBuffer::BlitFromDefault(uint32 InSrcX0,
-									uint32 InSrcY0, 
-									uint32 InSrcX1, 
-									uint32 InSrcY1, 
-									uint32 InDstX0, 
-									uint32 InDstY0, 
-									uint32 InDstX1, 
-									uint32 InDstY1,
-									GLbitfield InMask,
-									GLenum InFilter)
+	uint32 InSrcY0,
+	uint32 InSrcX1,
+	uint32 InSrcY1,
+	uint32 InDstX0,
+	uint32 InDstY0,
+	uint32 InDstX1,
+	uint32 InDstY1,
+	GLbitfield InMask,
+	GLenum InFilter)
 {
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
 	Bind(GL_DRAW_FRAMEBUFFER);

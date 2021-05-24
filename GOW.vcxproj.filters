@@ -27,6 +27,10 @@
     <ClInclude Include="Core\GOWRenderBuffer.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\GOWShader.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\GOWMesh.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\GOWEngine.cpp">
@@ -72,6 +76,9 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\GOWFrameBuffer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GOWShader.cpp">
       <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>

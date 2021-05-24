@@ -24,7 +24,9 @@
     <ClInclude Include="Core\GOWEngine.h" />
     <ClInclude Include="Core\GOWFrameBuffer.h" />
     <ClInclude Include="Core\GOWImage.h" />
+    <ClInclude Include="Core\GOWMesh.h" />
     <ClInclude Include="Core\GOWRenderBuffer.h" />
+    <ClInclude Include="Core\GOWShader.h" />
     <ClInclude Include="Core\GOWTexture.h" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +39,7 @@
     <ClCompile Include="Core\GOWOrthographicCamera.cpp" />
     <ClCompile Include="Core\GOWPerspectiveGamera.cpp" />
     <ClCompile Include="Core\GOWRenderBuffer.cpp" />
+    <ClCompile Include="Core\GOWShader.cpp" />
     <ClCompile Include="Core\GOWTexture.cpp" />
     <ClCompile Include="Core\GOWTexture1D.cpp" />
     <ClCompile Include="Core\GOWTexture1DArray.cpp" />
